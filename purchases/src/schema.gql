@@ -1,0 +1,31 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Purchase {
+  id: ID!
+  status: PurchaseStatus!
+  userId: String!
+  productId: String!
+  quantity: Float!
+}
+
+"""Available purchase statuses"""
+enum PurchaseStatus {
+  PENDING
+  APPROVED
+  FAILED
+}
+
+type Query {
+  userPurchases(userId: String!): [Purchase!]!
+}
+
+type Mutation {
+  createPurchase(data: CreatePurchaseInput!): Purchase!
+}
+
+input CreatePurchaseInput {
+  productId: String!
+  quantity: Float!
+}

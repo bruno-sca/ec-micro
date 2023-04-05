@@ -1,0 +1,28 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type SigninOutput {
+  access_token: String!
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String!
+}
+
+type Query {
+  users: [User!]!
+}
+
+type Mutation {
+  user(data: CreateUserInput!): User!
+  signin(email: String!, password: String!): SigninOutput!
+}
+
+input CreateUserInput {
+  name: String!
+  email: String!
+  password: String!
+}
